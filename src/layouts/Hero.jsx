@@ -1,4 +1,5 @@
 import Chart from "../assets/hero.png";
+import { motion } from "framer-motion";
 export function Hero() {
   return (
     <div className="w-full max-w-[1110px] flex flex-col justify-between items-center px-5 py-5 m-auto  sm:flex-row-reverse sm:flex-nowrap">
@@ -14,9 +15,13 @@ export function Hero() {
           Manage makes it simple for software teams to plan day-to-day tasks
           while keeping the larger team goals in view.
         </p>
-        <button className="md:flex lg:px-8 bg-buttonbg  px-4 py-3 rounded-3xl text-4 text-white font-bold hover:scale-[1.1] transition-all mt-7">
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          className="md:flex lg:px-8 bg-buttonbg  px-4 py-3 rounded-3xl text-4 text-white font-bold hover:scale-[1.1] transition-all mt-7"
+        >
           Get Started
-        </button>
+        </motion.button>
       </div>
     </div>
   );

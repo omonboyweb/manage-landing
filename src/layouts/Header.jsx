@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Logo from "../assets/logo.svg";
 import Hamburger from "../assets/nav-icon.svg";
+import { motion } from "motion/react";
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => {
@@ -28,9 +29,13 @@ export function Header() {
           <a href="#">Community</a>
         </li>
       </ul>
-      <button className="hidden md:flex lg:px-8 lg: bg-buttonbg  px-4 py-3 rounded-3xl text-4 text-white font-bold hover:scale-[1.1] transition-all">
+      <motion.button
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        className="hidden md:flex lg:px-8 lg: bg-buttonbg  px-4 py-3 rounded-3xl text-4 text-white font-bold hover:scale-[1.1] transition-all"
+      >
         Get Started
-      </button>
+      </motion.button>
       <button onClick={toggleMenu} className="sm:hidden">
         <img src={Hamburger} alt="Navigation icon" />
       </button>
